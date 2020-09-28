@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -105,9 +105,10 @@ public class MissionDemolition : MonoBehaviour
     {
         level++;
 
-        if (level == levelMax)
+        if (level == 1)
         {
             level = 0;
+            SceneManager.LoadScene("gameOver");
         }
 
         StartLevel();
