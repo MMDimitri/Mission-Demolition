@@ -140,6 +140,7 @@ public class MissionDemolition : MonoBehaviour
                 uitButton.text = "Show Slingshot";
                 break;
         }
+        GetComponent<AudioSource>().Play();
     }
 
     public static void ShotFired()

@@ -90,6 +90,7 @@ public class Slingshot : MonoBehaviour
             MissionDemolition.ShotFired();
             ProjectileLine.S.poi = projectile;
             projectile = null;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
