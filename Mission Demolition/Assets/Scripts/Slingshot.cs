@@ -111,6 +111,8 @@ public class Slingshot : MonoBehaviour
             ProjectileLine.S.poi = projectile;
             projectile = null;
             GetComponent<AudioSource>().Play();
+            Destroy(rubberBand[0]);
+            Destroy(rubberBand[1]);
         }
     }
 }
