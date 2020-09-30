@@ -5,6 +5,13 @@ using UnityEngine;
 public class Slingshot : MonoBehaviour
 {
     static private Slingshot S;
+
+
+    public Transform leftAnchor;
+    public Transform rightAnchor;
+
+    public LineRenderer[] rubberBand;
+
    
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
@@ -35,6 +42,12 @@ public class Slingshot : MonoBehaviour
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position;
+    }
+
+    void Start()
+    {
+        rubberBand[0].SetPosition(0, leftAnchor.position);
+        rubberBand[1].SetPosition(0, rightAnchor.position);
     }
 
     void OnMouseEnter()
@@ -81,6 +94,11 @@ public class Slingshot : MonoBehaviour
         Vector3 projPos = launchPos + mouseDelta;
         projectile.transform.position = projPos;
 
+        for (int i = 0; i < rubberBand.Length; i++)
+        {
+            rubberBand[i].SetPosition(1, projPos);
+        }
+
         if ( Input.GetMouseButtonUp(0) )
         {
             aimingMode = false;
@@ -90,6 +108,7 @@ public class Slingshot : MonoBehaviour
             MissionDemolition.ShotFired();
             ProjectileLine.S.poi = projectile;
             projectile = null;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
