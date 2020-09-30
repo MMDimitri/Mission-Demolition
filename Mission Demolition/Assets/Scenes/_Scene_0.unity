@@ -398,6 +398,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 7000761542476708060, guid: 58c3c5f1c8d0aaa4eba17ccb1c0429ff,
     type: 3}
   velocityMult: 10
+  rubberBandMat: {fileID: 0}
   launchPoint: {fileID: 0}
   launchPos: {x: 0, y: 0, z: 0}
   projectile: {fileID: 0}

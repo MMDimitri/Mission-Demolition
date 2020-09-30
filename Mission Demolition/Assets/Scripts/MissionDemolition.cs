@@ -105,13 +105,15 @@ public class MissionDemolition : MonoBehaviour
     {
         level++;
 
-        if (level == 1)
+        if (level == levelMax)
         {
-            level = 0;
             SceneManager.LoadScene("gameOver");
+            level = 0;
         }
-
-        StartLevel();
+        else
+        { 
+            StartLevel();
+        }
     }
 
     public void SwitchView(string eView = "")
