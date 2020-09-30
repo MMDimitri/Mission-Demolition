@@ -44,11 +44,11 @@ public class Slingshot : MonoBehaviour
         launchPos = launchPointTrans.position;
     }
 
-    void Start()
-    {
-        rubberBand[0].SetPosition(0, leftAnchor.position);
-        rubberBand[1].SetPosition(0, rightAnchor.position);
-    }
+    //void Start()
+    //{
+    //    rubberBand[0].SetPosition(0, leftAnchor.position);
+    //    rubberBand[1].SetPosition(0, rightAnchor.position);
+    //}
 
     void OnMouseEnter()
     {
@@ -70,6 +70,8 @@ public class Slingshot : MonoBehaviour
 
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
         projectileRigidbody.isKinematic = true;
+        rubberBand[0].SetPosition(0, leftAnchor.position);
+        rubberBand[1].SetPosition(0, rightAnchor.position);
     }
 
     void Update()
